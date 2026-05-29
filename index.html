@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abberley Greens — neighbourhood shop, Stoke-on-Trent</title>
+<meta name="description" content="A small neighbourhood shop in Stoke-on-Trent. Fresh, loose, useful — bread, milk, papers and whatever's gone on the board today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oat:#FBF8F2;
+  --paper:#F2EDDF;
+  --sage:#D6DBC7;
+  --moss:#7E8E73;
+  --moss-deep:#3F4C3A;
+  --walnut:#5B4A3A;
+  --ink:#211B12;
+  --soft:#88806E;
+  --display:"Libre Baskerville", "EB Garamond", Georgia, serif;
+  --sans:"Work Sans", -apple-system, system-ui, sans-serif;
+  --rhythm:clamp(1rem,.7rem + .6vw,1.125rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--oat);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:var(--rhythm);
+  line-height:1.55;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  overflow-x:hidden;
+}
+/* letterpress grain */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:.045;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;letter-spacing:-.01em}
+p{text-wrap:pretty;hyphens:auto}
+
+/* ------- TOP STRIP ------- */
+.top{
+  position:relative;z-index:5;
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:1.1rem clamp(1.1rem,3vw,2.4rem);
+  font-family:var(--sans);font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--walnut);
+  border-bottom:1px solid color-mix(in srgb, var(--walnut) 18%, transparent);
+}
+.top .left{display:flex;gap:1.6rem}
+.top .left span{display:flex;align-items:baseline;gap:.5rem}
+.top .dot{display:inline-block;width:7px;height:7px;border-radius:999px;background:var(--moss);transform:translateY(-1px)}
+.top .right{font-style:italic;font-family:var(--display);text-transform:none;letter-spacing:0;color:var(--soft)}
+@media(max-width:640px){
+  .top .right{display:none}
+  .top{font-size:.7rem}
+}
+
+/* ------- MASTHEAD ------- */
+.masthead{
+  position:relative;z-index:2;
+  padding:clamp(2.6rem,7vh,5rem) clamp(1.1rem,3vw,2.4rem) clamp(1rem,3vh,2rem);
+  min-height:78vh;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.brandmark{
+  font-family:var(--display);
+  font-weight:400;font-style:italic;
+  font-size:clamp(1.05rem,1.6vw,1.35rem);
+  color:var(--walnut);
+  letter-spacing:-.005em;
+}
+.brandmark em{font-style:normal;font-weight:700;color:var(--ink)}
+
+.hero{
+  position:relative;
+  margin-top:clamp(1.5rem,4vh,3rem);
+}
+.hero .word{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(4.6rem,19.5vw,17rem);
+  line-height:.84;
+  letter-spacing:-.045em;
+  color:var(--ink);
+  display:block;
+  position:relative;
+}
+.hero .word .amp{
+  font-style:italic;
+  font-weight:400;
+  color:var(--moss-deep);
+  font-size:.6em;
+  vertical-align:.18em;
+  margin:0 .04em;
+}
+.hero .row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:1.4rem;
+  flex-wrap:wrap;
+}
+.kicker{
+  font-family:var(--display);
+  font-style:italic;font-weight:400;
+  font-size:clamp(1rem,1.25vw + .6rem,1.5rem);
+  color:var(--walnut);
+  max-width:30ch;
+}
+.kicker b{font-weight:700;font-style:normal;color:var(--moss-deep)}
+.locale{
+  font-family:var(--sans);
+  font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.22em;
+  color:var(--walnut);
+}
+.locale b{color:var(--ink);font-weight:600}
+
+/* a hand-set little leaf at the top of the G — pure type-as-art */
+.printer-mark{
+  position:absolute;
+  top:-.4em;
+  left:clamp(2.4rem,7vw,7.5rem);
+  font-family:var(--display);
+  font-style:italic;font-weight:400;
+  font-size:clamp(.85rem,1.1vw + .55rem,1.15rem);
+  color:var(--moss-deep);
+  letter-spacing:.02em;
+  transform:rotate(-2deg);
+  background:var(--oat);
+  padding:.1em .55em .15em;
+  border:1px solid color-mix(in srgb, var(--moss-deep) 35%, transparent);
+}
+
+/* ------- MARQUEE ------- */
+.marquee{
+  position:relative;z-index:2;
+  background:var(--ink);
+  color:var(--oat);
+  overflow:hidden;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  --speed:36s;
+}
+.marquee__track{
+  display:inline-flex;
+  gap:3rem;
+  white-space:nowrap;
+  padding:.95rem 0;
+  font-family:var(--display);
+  font-style:italic;
+  font-size:clamp(1.1rem,1.4vw + .7rem,1.7rem);
+  animation:scroll var(--speed) linear infinite;
+  will-change:transform;
+}
+.marquee__track span{display:inline-flex;align-items:center;gap:3rem}
+.marquee__track i{
+  font-style:normal;font-family:var(--sans);
+  color:var(--moss);
+  font-size:.55em;
+  transform:translateY(-.1em);
+  letter-spacing:.3em;text-transform:uppercase;
+}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){
+  .marquee__track{animation:none;transform:none}
+}
+
+/* ------- WHAT'S IN ------- */
+.shop{
+  position:relative;z-index:2;
+  padding:clamp(3rem,8vh,6rem) clamp(1.1rem,3vw,2.4rem);
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(2rem,5vh,3.5rem);
+  max-width:1200px;margin:0 auto;
+}
+@media(min-width:840px){
+  .shop{grid-template-columns:1fr 1.4fr;gap:clamp(3rem,5vw,5rem)}
+}
+.shop .lede h2{
+  font-size:clamp(2rem,3vw + 1rem,3.6rem);
+  line-height:.98;
+  color:var(--ink);
+  margin-bottom:1.1rem;
+}
+.shop .lede h2 em{color:var(--moss-deep);font-style:italic;font-weight:400}
+.shop .lede p{
+  max-width:34ch;
+  color:var(--walnut);
+  font-size:1.05rem;
+}
+.shop .lede .sig{
+  font-family:var(--display);font-style:italic;
+  color:var(--soft);
+  margin-top:1.3rem;
+  font-size:.95rem;
+}
+
+/* broadsheet-style list */
+.list{
+  border-top:1px solid var(--ink);
+}
+.list dl{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:baseline;
+  gap:.6rem 1.2rem;
+  padding:1rem 0 .85rem;
+  border-bottom:1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.list dt{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(1.2rem,1.4vw + .6rem,1.8rem);
+  letter-spacing:-.01em;
+  color:var(--ink);
+}
+.list .dots{
+  border-bottom:1.5px dotted color-mix(in srgb, var(--ink) 35%, transparent);
+  transform:translateY(-.35em);
+  min-width:1rem;
+}
+.list dd{
+  font-family:var(--sans);
+  font-size:.95rem;
+  color:var(--walnut);
+  font-style:normal;
+  text-align:right;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.list dl p{
+  grid-column:1 / -1;
+  margin-top:.15rem;
+  color:var(--soft);
+  font-size:.95rem;
+  font-family:var(--sans);
+  text-transform:none;letter-spacing:0;
+  text-align:left;
+}
+
+/* ------- SLAB: MOSSY ------- */
+.slab{
+  position:relative;z-index:2;
+  background:var(--sage);
+  color:var(--moss-deep);
+  padding:clamp(4rem,11vh,7rem) clamp(1.1rem,3vw,2.4rem);
+  border-top:1px solid color-mix(in srgb, var(--moss-deep) 25%, transparent);
+  border-bottom:1px solid color-mix(in srgb, var(--moss-deep) 25%, transparent);
+}
+.slab__inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(2rem,4vh,3rem);
+}
+@media(min-width:840px){
+  .slab__inner{grid-template-columns:.85fr 1.15fr;gap:clamp(3rem,6vw,6rem);align-items:end}
+}
+.slab h2{
+  font-size:clamp(2.4rem,5vw + 1rem,5.4rem);
+  line-height:.92;
+  color:var(--ink);
+  letter-spacing:-.02em;
+}
+.slab h2 em{font-style:italic;font-weight:400;color:var(--moss-deep)}
+.slab .blurb{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.05rem,.8vw + .85rem,1.35rem);
+  line-height:1.55;
+  color:var(--moss-deep);
+  max-width:42ch;
+}
+.slab .blurb p + p{margin-top:1rem}
+.slab .blurb .pull{
+  font-style:italic;
+  font-size:1.15em;
+  color:var(--ink);
+  border-left:2px solid var(--moss-deep);
+  padding-left:1rem;
+  margin-top:1.4rem;
+}
+
+/* tiny figures grid */
+.figures{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:.4rem;
+  margin-top:2rem;
+  border-top:1px solid color-mix(in srgb, var(--moss-deep) 30%, transparent);
+  padding-top:1.4rem;
+}
+.figures div{
+  display:flex;flex-direction:column;gap:.25rem;
+  padding-right:.6rem;
+}
+.figures .num{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.6rem,2vw + .8rem,2.6rem);
+  line-height:1;
+  color:var(--ink);
+}
+.figures .lbl{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--walnut);
+}
+
+/* ------- ABOUT / NEIGHBOURHOOD ------- */
+.neigh{
+  position:relative;z-index:2;
+  padding:clamp(4rem,11vh,7rem) clamp(1.1rem,3vw,2.4rem);
+  background:var(--paper);
+  border-bottom:1px solid color-mix(in srgb, var(--walnut) 18%, transparent);
+}
+.neigh__inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(2rem,4vh,3rem);
+}
+@media(min-width:840px){
+  .neigh__inner{grid-template-columns:1.2fr 1fr;gap:clamp(3rem,5vw,5rem)}
+}
+.neigh h2{
+  font-size:clamp(2rem,3vw + 1rem,3.4rem);
+  line-height:1;
+  margin-bottom:1.2rem;
+}
+.neigh h2 em{font-style:italic;color:var(--moss-deep);font-weight:400}
+.neigh p{
+  color:var(--walnut);
+  font-size:1.02rem;
+  max-width:52ch;
+}
+.neigh p + p{margin-top:1rem}
+.neigh .quote{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:clamp(1.3rem,1.6vw + .8rem,2.1rem);
+  line-height:1.25;
+  color:var(--ink);
+  border-left:3px solid var(--moss-deep);
+  padding-left:1.2rem;
+  margin:0;
+}
+.neigh .quote small{
+  display:block;
+  font-family:var(--sans);
+  font-style:normal;
+  font-size:.75rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--soft);
+  margin-top:1rem;
+}
+
+/* ------- FIND US ------- */
+.find{
+  position:relative;z-index:2;
+  background:var(--ink);
+  color:var(--oat);
+  padding:clamp(4rem,11vh,6.5rem) clamp(1.1rem,3vw,2.4rem);
+}
+.find__inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(2rem,5vh,4rem);
+}
+@media(min-width:840px){
+  .find__inner{grid-template-columns:1fr 1fr;align-items:end}
+}
+.find h2{
+  font-size:clamp(2.6rem,5vw + 1.2rem,5.8rem);
+  line-height:.92;
+  letter-spacing:-.025em;
+  color:var(--oat);
+}
+.find h2 em{font-style:italic;font-weight:400;color:var(--moss)}
+.find .meta{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  row-gap:1.2rem;column-gap:1.6rem;
+  align-items:baseline;
+}
+.find .meta dt{
+  font-family:var(--sans);
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--moss);
+}
+.find .meta dd{
+  font-family:var(--display);
+  font-size:clamp(1.05rem,1vw + .7rem,1.45rem);
+  color:var(--oat);
+  line-height:1.35;
+}
+.find .meta dd em{font-style:italic;color:color-mix(in srgb, var(--oat) 70%, transparent);font-weight:400;font-size:.85em}
+
+.find .note{
+  margin-top:2rem;
+  font-family:var(--display);font-style:italic;
+  color:color-mix(in srgb, var(--oat) 65%, transparent);
+  font-size:.95rem;
+  max-width:38ch;
+}
+
+/* ------- FOOTER ------- */
+.foot{
+  position:relative;z-index:2;
+  background:var(--ink);
+  color:color-mix(in srgb, var(--oat) 55%, transparent);
+  padding:1.6rem clamp(1.1rem,3vw,2.4rem) 2.2rem;
+  border-top:1px solid color-mix(in srgb, var(--oat) 12%, transparent);
+  display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:baseline;
+  font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+}
+.foot .mark{font-family:var(--display);font-style:italic;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--oat)}
+.foot a:hover{color:var(--oat)}
+
+/* scroll-driven reveals */
+@supports (animation-timeline: view()){
+  .reveal{
+    animation: rise both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 28%;
+  }
+  @keyframes rise{
+    from{opacity:0;transform:translateY(1.6rem)}
+    to{opacity:1;transform:translateY(0)}
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="left">
+    <span><i class="dot"></i> Neighbourhood shop</span>
+    <span>Stoke-on-Trent</span>
+  </div>
+  <div class="right">est. on the corner, kept by hand</div>
+</header>
+
+<section class="masthead">
+  <div class="brandmark"><em>Abberley</em> · Greens</div>
+
+  <div class="hero">
+    <span class="printer-mark">Abberley</span>
+    <span class="word" aria-label="Greens">GREENS</span>
+    <div class="row">
+      <p class="kicker">
+        A small shop of <b>useful things</b> &mdash; the bread you forgot, the
+        veg you meant to buy on Saturday, the paper, the milk, the can that
+        finishes the dinner.
+      </p>
+      <p class="locale"><b>Stoke-on-Trent</b> &nbsp;·&nbsp; pop in</p>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>fresh in <i>·</i> loose veg <i>·</i> milk &amp; bread <i>·</i> daily papers <i>·</i> the kettle's on <i>·</i> ask, we'll order it <i>·</i> nothing fancy, just honest <i>·</i></span>
+    <span>fresh in <i>·</i> loose veg <i>·</i> milk &amp; bread <i>·</i> daily papers <i>·</i> the kettle's on <i>·</i> ask, we'll order it <i>·</i> nothing fancy, just honest <i>·</i></span>
+  </div>
+</div>
+
+<section class="shop">
+  <div class="lede reveal">
+    <h2>What's <em>in</em>, what's useful.</h2>
+    <p>
+      No two days look the same on the shelves &mdash; what we stock follows what
+      the street wants. The list below is the everyday core. Anything missing,
+      ask at the counter and we'll add it to the next order.
+    </p>
+    <div class="sig">— from the till</div>
+  </div>
+
+  <div class="list reveal">
+    <dl>
+      <dt>Fresh &amp; loose</dt>
+      <span class="dots"></span>
+      <dd>day to day</dd>
+      <p>Potatoes, onions, root veg, salad bits, lemons, garlic, bananas, top-of-the-fruit-bowl apples. Brought in small, sold by the piece — no shrink-wrap unless it earns it.</p>
+    </dl>
+    <dl>
+      <dt>Bread &amp; milk</dt>
+      <span class="dots"></span>
+      <dd>every morning</dd>
+      <p>Sliced and unsliced loaves, baps, rolls. Whole, semi, skimmed and the blue-top your tea wants. Butter, eggs and the bits a fry-up actually needs.</p>
+    </dl>
+    <dl>
+      <dt>Papers</dt>
+      <span class="dots"></span>
+      <dd>early doors</dd>
+      <p>The dailies, the locals, magazines on Wednesday. Birthday cards in the rack by the door — paid for honestly, please.</p>
+    </dl>
+    <dl>
+      <dt>Tins, jars &amp; the dinner-finishers</dt>
+      <span class="dots"></span>
+      <dd>stocked deep</dd>
+      <p>Beans, soup, tinned tomatoes, pasta, rice, sauces, that one stock cube you ran out of. The cupboard staples a Sunday tea is built on.</p>
+    </dl>
+    <dl>
+      <dt>Sweets, ice &amp; the after-school stuff</dt>
+      <span class="dots"></span>
+      <dd>by the till</dd>
+      <p>The bottom-shelf classics, freezer-pops in summer, a 10p mix for whoever's got the right change. Coffee for the walk back.</p>
+    </dl>
+    <dl>
+      <dt>Ask-for-it</dt>
+      <span class="dots"></span>
+      <dd>any day</dd>
+      <p>If it's not on the shelf and you'd like it on the shelf, say. It'll usually be in by the next delivery.</p>
+    </dl>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="slab__inner">
+    <h2 class="reveal">Built for <em>a five-minute walk,</em><br>not a weekly shop.</h2>
+    <div class="blurb reveal">
+      <p>
+        The big supermarket has its place. So does the corner shop &mdash; and
+        the corner shop's place is the bit of your week the big shop doesn't
+        catch. A pint of milk on a Tuesday night. A loaf of bread before
+        breakfast. A bunch of bananas because you forgot. A card for the
+        birthday you forgot harder.
+      </p>
+      <p>
+        We try to keep it stocked for that. Small order, often. Honest pricing.
+        A door that doesn't pretend to know you better than it does, but
+        remembers your order when it sees you twice.
+      </p>
+      <p class="pull">
+        "If you've run out of it on a Sunday, the chances are we've got it."
+      </p>
+    </div>
+  </div>
+
+  <div class="slab__inner figures reveal" style="margin-top:clamp(2.5rem,5vh,4rem);grid-template-columns:repeat(3,1fr);gap:1.2rem">
+    <div>
+      <span class="num">7 days</span>
+      <span class="lbl">a week</span>
+    </div>
+    <div>
+      <span class="num">Small &amp; often</span>
+      <span class="lbl">deliveries</span>
+    </div>
+    <div>
+      <span class="num">No app</span>
+      <span class="lbl">just walk in</span>
+    </div>
+  </div>
+</section>
+
+<section class="neigh">
+  <div class="neigh__inner">
+    <div class="reveal">
+      <h2>Of the <em>street,</em> by the street.</h2>
+      <p>
+        Abberley Greens sits where Stoke-on-Trent slows down a bit &mdash; in the
+        bit of the city where people still walk to the shop, push a buggy
+        across the road for it, send the kids up with a fiver and a list.
+      </p>
+      <p>
+        That's the kind of shop we try to be. Stocked for the people who live
+        in shouting distance, not for a passing trade. If you live nearby,
+        come and tell us what you'd like in. It's how the shelves get sharper.
+      </p>
+    </div>
+    <blockquote class="quote reveal">
+      "A good corner shop is a small civic thing. It opens early, it remembers,
+      and it takes the strain off the weeks that go a bit sideways."
+      <small>— our brief, to ourselves</small>
+    </blockquote>
+  </div>
+</section>
+
+<section class="find" id="find">
+  <div class="find__inner">
+    <h2 class="reveal">Find us. Or just <em>walk in.</em></h2>
+    <dl class="meta reveal">
+      <dt>Where</dt>
+      <dd>Stoke-on-Trent &mdash; the neighbourhood shop on the corner.<br><em>Postcode &amp; door number coming soon.</em></dd>
+
+      <dt>When</dt>
+      <dd>Open most of the day, most days. <em>Hours posted in the window.</em></dd>
+
+      <dt>How to ask</dt>
+      <dd>Come in and ask at the till. We're easier to talk to in person than on a form.</dd>
+    </dl>
+  </div>
+  <p class="note">
+    This page is the shop's home on the web while we get the door details and
+    times printed up properly. If you'd like to be added to the WhatsApp for
+    fresh-in shouts, mention it next time you're in.
+  </p>
+</section>
+
+<footer class="foot">
+  <div class="mark"><em>Abberley</em> Greens</div>
+  <div>Stoke-on-Trent &nbsp;·&nbsp; Neighbourhood shop &nbsp;·&nbsp; &copy; <span id="y">2026</span></div>
+  <div>Built by hand, kept by hand.</div>
+</footer>
+
+<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>
